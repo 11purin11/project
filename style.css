@@ -1,0 +1,7 @@
+#playnow{
+  transform: scale(1.5);
+  animation: zoomout 1.3s  infinite linear;
+}
+@keyframes zoomout{
+  50% {transform: scale(.95);} 60% {transform: scale(1.05);} 70%,100% {transform: scale(1);}
+}
