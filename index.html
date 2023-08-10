@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>音楽再生アプリ</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"  crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <h1>音楽再生アプリ</h1>
+    <input type="file" id="fileInput" accept=".mp3">
+    <button id="addButton">追加</button>
+    <p>ループ機能：
+        <select id="mode">
+            <option selected value="off">off</option>
+            <option value="on">on</option>
+        </select>
+        <button id="loopButton">設定</button>
+    </p>
+    <table id="fileTable">
+        <thead>
+            <tr>
+                <th>ファイル名</th>
+                <th>再生区間</th>
+                <th>アクション</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- ここにファイル情報が追加されます -->
+        </tbody>
+    </table>
+    <div id="sliderContainer" style="display: none;"></div>
+    <button id="backButton">前へ</button>
+    <button id="nextButton">次へ</button>
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" type="audio/mp3">
+    </audio>
+    <p id="playnow"></p>
+    <script src="app.js"></script>
+</body>
+</html>
