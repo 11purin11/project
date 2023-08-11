@@ -1,7 +1,42 @@
 #playnow{
-  transform: scale(1.5);
-  animation: zoomout 1.3s  infinite linear;
+  padding-left: 30px;
 }
-@keyframes zoomout{
-  50% {transform: scale(.95);} 60% {transform: scale(1.05);} 70%,100% {transform: scale(1);}
+.noUi-tooltip {
+  display: none !important;
+}
+.noUi-active .noUi-tooltip {
+  display: block !important;
+}
+
+.noUiSlider-wrap .inner-block {
+  padding: 50px;
+}
+@media screen and (max-width:761px) {
+  .noUiSlider-wrap .inner-block {
+    padding: 26px;
+  }
+}
+.noUiSlider-wrap .text-wrap {
+  margin: 30px auto;
+}
+.noUi-horizontal .noUi-handle {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  top: -8px;
+}
+.noUi-horizontal .noUi-handle::before, .noUi-horizontal .noUi-handle::after  {
+  content: none;
+}
+.noUi-connect {
+  background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.noUiSlider {
+  width: 150px; /* 例えば300pxの幅に設定 */
+}
+.noUiSlider .noUi-handle {
+  background-color: #f00;
+  width: 20px;
+  height: 20px;
 }
