@@ -17,3 +17,8 @@ origin.mp3-origin.mp3(1-2)
 ・UIの向上
 ・audioタグに環境ごとに対応できない問題があるかもしれない
 ・並び替えなどの仕組み、表示名の変更の予定
+
+（問題）
+・【MAD】僕のヒーローアカデミア -平和の象徴-「英雄」(NaN:NaN)	00:00 - NaN:NaN
+・削除を行い、playlistが０個のときのaudioSource.srcの値の取り方（現在はundefinedにしているが）
+・
