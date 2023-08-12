@@ -60,6 +60,10 @@ addButton.addEventListener('click', () => {
     const fileName = tmp.substr(0,tmp.length-4);
     const audio = new Audio();
     audio.src = URL.createObjectURL(file);
+    audio.load();
+    audio.addEventListener('canplaythrough', () => {
+      console.log("duration:",audio.duration);
+    })
     const reader = new FileReader();
     reader.onload = function(e) {
         const newRow = fileTable.insertRow();
@@ -69,13 +73,13 @@ addButton.addEventListener('click', () => {
 
         startlist[startlist.length]=0.0;
         endlist[endlist.length]=audio.duration;
+        playlist[playlist.length]=audio;
+        namelist[namelist.length]=fileName+"("+convertSecToMin(audio.duration)+") ";
 
-        nameCell.innerHTML = fileName+"("+convertSecToMin(audio.duration)+") ";
+        nameCell.innerHTML = namelist[namelist.length-1];
         Time.innerHTML = showTime(startlist.length-1);
         action.innerHTML = '<button onclick="customButton(this)">カスタム</button> <button onclick="deleteButton(this)">削除</button>';
 
-        playlist[playlist.length]=audio;
-        namelist[namelist.length]=fileName+"("+convertSecToMin(audio.duration)+") ";
         if(playlist.length==1){
           audioSource.src = audio.src;
           audioPlayer.load();
@@ -135,7 +139,13 @@ loopButton.addEventListener('click', () => {
 
 function setValues(range){
   let result = [];
-  for(let i=30;i<range;i+=30){
+  const size = 10;
+  let scope = 30;
+  while(range>=size*scope){
+    if(scope>300) break;
+    scope*=2;
+  }
+  for(let i=scope;i<range;i+=scope){
     result[result.length]=i;
   }
   return result;
