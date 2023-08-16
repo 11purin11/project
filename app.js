@@ -1,4 +1,5 @@
 "use strict";
+;(function(){
 const fileInput = document.getElementById("fileInput");
 const fileTable = document.getElementById("fileTable").getElementsByTagName("tbody")[0];
 const addButton = document.getElementById('addButton');
@@ -255,4 +256,4 @@ audioPlayer.addEventListener('pause', () => {
 audioPlayer.addEventListener('play', () => {
   playnow.innerHTML = "再生中：" + namelist[currentmusic];
 });
-
+});
