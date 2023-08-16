@@ -1,5 +1,4 @@
 "use strict";
-;(function(){
 const fileInput = document.getElementById("fileInput");
 const fileTable = document.getElementById("fileTable").getElementsByTagName("tbody")[0];
 const addButton = document.getElementById('addButton');
@@ -140,7 +139,7 @@ loopButton.addEventListener('click', () => {
 
 function setValues(range){
   let result = [];
-  const size = 10;
+  const size = 8;
   let scope = 30;
   while(range>=size*scope){
     if(scope>300) break;
@@ -255,5 +254,4 @@ audioPlayer.addEventListener('pause', () => {
 });
 audioPlayer.addEventListener('play', () => {
   playnow.innerHTML = "再生中：" + namelist[currentmusic];
-});
 });
